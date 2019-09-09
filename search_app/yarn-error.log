@@ -1,0 +1,84 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add electron-compile electron-squirrel-startup
+
+PATH: 
+  /Users/waniu/.cargo/bin:/Users/waniu/gradle-4.10.3/bin:/Users/waniu/.deno/bin:/Users/waniu/.deno/bin:/Users/waniu/.cargo/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/waniu/Library/apache-maven-3.5.2/bin:/Users/waniu/Library/Python/3.7/bin:/Users/waniu/gradle-4.10.3/bin:/Users/waniu/spring-2.0.0.BUILD-SNAPSHOT/bin:/Users/waniu/Library/apache-maven-3.5.2/bin:/usr/local/opt/go/libexec/bin:/Users/waniu/.go/bin:/Users/waniu/flutter/bin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.15.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://npm.mail.netease.com/registry/electron-compile: Request "http://npm.mail.netease.com/registry/electron-compile" returned a 403
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:65903:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129018:22)
+      at Request.emit (events.js:189:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:129990:10)
+      at Request.emit (events.js:189:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:129912:12)
+      at Object.onceWrapper (events.js:277:13)
+      at IncomingMessage.emit (events.js:194:15)
+      at endReadableNT (_stream_readable.js:1103:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "search_app",
+    "productName": "search_app",
+    "version": "1.0.0",
+    "description": "My Electron application description",
+    "main": "src/index.js",
+    "scripts": {
+      "start": "electron-forge start",
+      "package": "electron-forge package",
+      "make": "electron-forge make",
+      "publish": "electron-forge publish",
+      "lint": "eslint src --color"
+    },
+    "keywords": [],
+    "author": "waniu",
+    "license": "MIT",
+    "config": {
+      "forge": {
+        "make_targets": {
+          "win32": [
+            "squirrel"
+          ],
+          "darwin": [
+            "zip"
+          ],
+          "linux": [
+            "deb",
+            "rpm"
+          ]
+        },
+        "electronPackagerConfig": {
+          "packageManager": "yarn"
+        },
+        "electronWinstallerConfig": {
+          "name": "search_app"
+        },
+        "electronInstallerDebian": {},
+        "electronInstallerRedhat": {},
+        "github_repository": {
+          "owner": "",
+          "name": ""
+        },
+        "windowsStoreConfig": {
+          "packageName": "",
+          "name": "search_app"
+        }
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
