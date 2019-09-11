@@ -1,0 +1,11 @@
+.content-align{
+    text-align: center;
+    width: 100%;
+}
+.content-vertical{
+    line-height: 380px;
+}
+.haveContent{
+    box-sizing: border-box;
+    padding: 10px;
+}

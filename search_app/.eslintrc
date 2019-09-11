@@ -3,7 +3,12 @@
   "rules": {
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": [2, { "ignore": ["electron"] }],
+    "import/no-unresolved": [2, { "ignore": ["electron","window"] }],
     "linebreak-style": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
   }
 }

@@ -5,11 +5,10 @@ let path = require('path');
 
 // 调用rust函数
 let triggerCopy = ffi.Library(path.join(__dirname, '../rust_native/target/debug/librust_native'), {
-  clipoard_out: ['void', ['void']],
-  threadcount: ['int', ['int']]
+  clipoard_out: ['void', ['void']]
 });
 
-console.log(triggerCopy.threadcount(2));
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -29,13 +28,6 @@ const createWindow = () => {
     width: 580,
     height: 425,
     frame: false,
-    webPreferences: {
-      javascript: true,
-      plugins: true,
-      nodeIntegration: false, // 不集成 Nodejs
-      webSecurity: false,
-      preload: path.join(__dirname, './public/render.js') // 但预加载的 js 文件内仍可以使用 Nodejs 的 API
-    }
   });
 
   // and load the index.html of the app.
@@ -79,10 +71,10 @@ const createWindow = () => {
   ])
   tray.setToolTip('This is my application.')
   tray.setContextMenu(contextMenu);
-  // tray.on('click', function () {
-  //   mainWindow.isVisible() ? win.hide() : win.show()
-  //   mainWindow.isVisible() ? win.setSkipTaskbar(false) : win.setSkipTaskbar(true);
-  // })
+  tray.on('click', function () {
+    mainWindow.isVisible() ? win.hide() : win.show()
+    mainWindow.isVisible() ? win.setSkipTaskbar(false) : win.setSkipTaskbar(true);
+  })
 
   mainWindow.on('close', (e) => {
     //回收BrowserWindow对象
@@ -128,6 +120,6 @@ app.on('ready', () => {
 
 // 通信
 ipcMain.on('copy', (event, arg) => {
+  console.log(arg) // prints "ping"
   console.log('xxxxx');
-  triggerCopy.clipoard_out(1);
 })

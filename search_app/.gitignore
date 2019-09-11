@@ -1,2 +1,3 @@
 node_modules
-src/rust_native/target
+rust_native/target
+package-lock.json
